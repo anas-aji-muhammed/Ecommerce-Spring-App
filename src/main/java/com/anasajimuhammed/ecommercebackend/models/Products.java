@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class Products {
     @Id()
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private BigDecimal price;
     private BigDecimal costPrice;
     private int quantity;
@@ -23,7 +23,9 @@ public class Products {
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
     private Boolean active;
-    private int categoryId;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    private Category categoryId;
     @PrePersist
     public void prePersist() {
         LocalDateTime now = LocalDateTime.now();
@@ -36,11 +38,11 @@ public class Products {
         this.dateUpdated = LocalDateTime.now();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,11 +110,11 @@ public class Products {
         this.active = active;
     }
 
-    public int getCategoryId() {
+    public Category getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Category categoryId) {
         this.categoryId = categoryId;
     }
 

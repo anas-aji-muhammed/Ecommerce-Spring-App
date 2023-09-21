@@ -14,6 +14,9 @@ public class DtoEntityMapper {
      */
     public static Products productConvertToEntity(ProductDTO productDTO) {
         Products product = new Products();
+        if(productDTO.getId() != null){
+            product.setId(productDTO.getId());
+        }
         product.setName(productDTO.getName());
         product.setPrice(productDTO.getPrice());
         product.setDescription(productDTO.getDescription());

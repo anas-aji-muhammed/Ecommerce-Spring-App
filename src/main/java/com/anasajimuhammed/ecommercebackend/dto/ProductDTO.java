@@ -1,9 +1,11 @@
 package com.anasajimuhammed.ecommercebackend.dto;
 
+import com.anasajimuhammed.ecommercebackend.models.Category;
+
 import java.math.BigDecimal;
 
 public class ProductDTO {
-    private long id;
+    private Long id;
     private BigDecimal price;
     private BigDecimal costPrice;
     private int quantity;
@@ -13,13 +15,13 @@ public class ProductDTO {
     private String sku;
     private String imageUrl;
     private Boolean active;
-    private int categoryId;
+    private Category categoryId;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -71,11 +73,11 @@ public class ProductDTO {
         this.active = active;
     }
 
-    public int getCategoryId() {
+    public Category getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Category categoryId) {
         this.categoryId = categoryId;
     }
 

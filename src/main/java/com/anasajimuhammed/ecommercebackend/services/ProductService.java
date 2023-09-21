@@ -4,4 +4,6 @@ import com.anasajimuhammed.ecommercebackend.models.Products;
 
 public interface ProductService {
     Products addProduct(Products product);
+
+    boolean deleteProduct(Long productId);
 }
